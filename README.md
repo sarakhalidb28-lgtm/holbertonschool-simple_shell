@@ -219,8 +219,9 @@ These factors helped us build a stable and functional Simple Shell project.
 ---
 
 # Authors
+ 
+* **Eman Hamdan** - [iEmanHamdan](https://github.com/iEmanHamdan)
+* **Sara Al-Buraidi** - [Sara Al-Buraidi](https://github.com/sarakhalidb28-lgtm)
 
-Sara Al-Buraidi  
-Eman Hamdan
 
 <img width="948" height="541" alt="IMG_2605" src="https://github.com/user-attachments/assets/11a9c2db-2607-4d98-aad1-2754e12e2933" />
