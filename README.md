@@ -80,9 +80,8 @@ This is a simplified version of a UNIX shell.
 
 ## How can we approach and solve this project?
 
-<p align="center">
-  <img width="220" src="https://github.com/user-attachments/assets/d1cdf272-66e1-4516-b7ea-13ebd55e8dec" />
-</p>
+<p align="right">
+  <img align="right" width="180" src="https://github.com/user-attachments/assets/d1cdf272-66e1-4516-b7ea-13ebd55e8dec" />
 
 - Understand how a UNIX shell works
 - Break the project into small tasks
@@ -93,6 +92,9 @@ This is a simplified version of a UNIX shell.
 - Add builtin commands
 - Test and debug continuously
 - Work as a team and understand every step
+</p>
+
+<br clear="right"/>
 
 ---
 
@@ -111,9 +113,8 @@ The goal is to understand:
 
 ## How does Simple Shell work?
 
-<p align="center">
-  <img width="220" src="https://github.com/user-attachments/assets/b1979fcb-48aa-4fc8-8b25-8cff70231c70" />
-</p>
+<p align="right">
+  <img align="right" width="180" src="https://github.com/user-attachments/assets/b1979fcb-48aa-4fc8-8b25-8cff70231c70" />
 
 - The shell displays a prompt
 - The user enters a command
@@ -124,6 +125,9 @@ The goal is to understand:
 - `execve()` executes the command
 - The parent process waits
 - The shell returns to the prompt
+</p>
+
+<br clear="right"/>
 
 ---
 
@@ -185,10 +189,8 @@ This project teaches:
 
 ## What are the reasons for the success of this project?
 
-<p>
-  <img align="left" width="180" src="https://github.com/user-attachments/assets/d90025a4-54cf-4c0a-8f3f-dfb70b441929" />
-
-This project succeeded because:
+<p align="right">
+  <img align="right" width="170" src="https://github.com/user-attachments/assets/d90025a4-54cf-4c0a-8f3f-dfb70b441929" />
 
 - The work was divided clearly
 - The project was built step by step
@@ -204,7 +206,7 @@ This project succeeded because:
 These factors helped us build a stable and functional Simple Shell project.
 </p>
 
-<br clear="left"/>
+<br clear="right"/>
 
 ---
 
@@ -218,6 +220,7 @@ These factors helped us build a stable and functional Simple Shell project.
 
 # Authors
 
-Eman Hamdan
 Sara Al-Buraidi  
+Eman Hamdan
+
 <img width="948" height="541" alt="IMG_2605" src="https://github.com/user-attachments/assets/11a9c2db-2607-4d98-aad1-2754e12e2933" />
