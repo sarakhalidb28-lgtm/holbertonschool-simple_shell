@@ -8,6 +8,5 @@
 #include <sys/wait.h>
 
 extern char **environ;
-void execute_command(char **args);
 
 #endif
