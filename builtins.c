@@ -3,10 +3,11 @@
 /**
  * handle_builtins - Checks and executes built-in shell commands.
  * @args: Array of tokenized arguments.
+ * @line: The raw buffer allocated by getline to free on exit.
  *
  * Return: 1 if a built-in was executed, 0 otherwise.
  */
-int handle_builtins(char **args)
+int handle_builtins(char **args, char *line)
 {
 	int i;
 
@@ -15,6 +16,7 @@ int handle_builtins(char **args)
 
 	if (strcmp(args[0], "exit") == 0)
 	{
+		free(line); /* Drops the remaining heap leak block cleanly */
 		exit(0);
 	}
 

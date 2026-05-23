@@ -12,6 +12,7 @@ int main(void)
 	char *token;
 	char *full_path = NULL;
 	size_t len = 0;
+	ssize_t nread;
 	pid_t pid;
 	int status;
 	int i;
@@ -21,7 +22,8 @@ int main(void)
 		if (isatty(STDIN_FILENO))
 			printf("$ ");
 
-		if (getline(&line, &len, stdin) == -1)
+		nread = getline(&line, &len, stdin);
+		if (nread == -1)
 		{
 			if (isatty(STDIN_FILENO))
 				printf("\n");
@@ -29,7 +31,8 @@ int main(void)
 			exit(0);
 		}
 
-		line[strcspn(line, "\n")] = '\0';
+		if (line[nread - 1] == '\n')
+			line[nread - 1] = '\0';
 
 		token = strtok(line, " ");
 		i = 0;
@@ -44,7 +47,8 @@ int main(void)
 		if (args[0] == NULL)
 			continue;
 
-		if (handle_builtins(args))
+		/* Pass line down here so it can clear memory leaks */
+		if (handle_builtins(args, line))
 			continue;
 
 		full_path = find_path(args[0]);

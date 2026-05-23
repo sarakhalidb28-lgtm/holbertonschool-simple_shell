@@ -12,6 +12,6 @@
 extern char **environ;
 
 char *find_path(char *command);
-int handle_builtins(char **args);
+int handle_builtins(char **args, char *line);
 
 #endif
