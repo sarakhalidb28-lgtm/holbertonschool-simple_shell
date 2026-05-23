@@ -11,7 +11,8 @@
 
 extern char **environ;
 
+/* Function Prototypes */
 char *find_path(char *command);
-int handle_builtins(char **args, char *line);
+int handle_builtins(char **args, char *line, int *status);
 
-#endif
+#endif /* MAIN_H */

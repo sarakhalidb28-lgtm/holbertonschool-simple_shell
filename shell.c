@@ -14,7 +14,7 @@ int main(void)
 	size_t len = 0;
 	ssize_t nread;
 	pid_t pid;
-	int status;
+	int status = 0;
 	int i;
 
 	while (1)
@@ -28,7 +28,7 @@ int main(void)
 			if (isatty(STDIN_FILENO))
 				printf("\n");
 			free(line);
-			exit(0);
+			exit(status != 0 ? WEXITSTATUS(status) : 0);
 		}
 
 		if (line[nread - 1] == '\n')
@@ -47,14 +47,15 @@ int main(void)
 		if (args[0] == NULL)
 			continue;
 
-		/* Pass line down here so it can clear memory leaks */
-		if (handle_builtins(args, line))
+		/* Pass status address to catch failing commands status codes */
+		if (handle_builtins(args, line, &status))
 			continue;
 
 		full_path = find_path(args[0]);
 		if (full_path == NULL)
 		{
 			fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
+			status = 127 << 8; /* Set status code to 127 for missing commands */
 			continue;
 		}
 
