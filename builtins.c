@@ -19,10 +19,13 @@ int handle_builtins(char **args, char *line, int *status)
 	if (strcmp(args[0], "exit") == 0)
 	{
 		free(line);
-		/* If a child process ran before, evaluate its exact exit macro status */
-		if (status && *status != 0)
-			exit_code = WEXITSTATUS(*status);
-		
+		if (status)
+		{
+			if (*status == 127)
+				exit_code = 127;
+			else if (*status != 0)
+				exit_code = WEXITSTATUS(*status);
+		}
 		exit(exit_code);
 	}
 

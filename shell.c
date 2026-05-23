@@ -28,6 +28,9 @@ int main(void)
 			if (isatty(STDIN_FILENO))
 				printf("\n");
 			free(line);
+			/* Clean exit using the actual tracked exit status */
+			if (status == 127)
+				exit(127);
 			exit(status != 0 ? WEXITSTATUS(status) : 0);
 		}
 
@@ -47,7 +50,6 @@ int main(void)
 		if (args[0] == NULL)
 			continue;
 
-		/* Pass status address to catch failing commands status codes */
 		if (handle_builtins(args, line, &status))
 			continue;
 
@@ -55,7 +57,7 @@ int main(void)
 		if (full_path == NULL)
 		{
 			fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
-			status = 127 << 8; /* Set status code to 127 for missing commands */
+			status = 127; /* Set status code directly to 127 */
 			continue;
 		}
 
