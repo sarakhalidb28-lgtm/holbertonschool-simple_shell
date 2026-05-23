@@ -1,1 +1,26 @@
+.TH HSH 1 "MAY 2026" "Holberton School" "User Commands"
+.SH NAME
+hsh \- Custom simple UNIX command line interpreter shell execution environment
+.SH SYNOPSIS
+.B ./hsh
+.SH DESCRIPTION
+.B hsh
+is a streamlined command-line interface engineered in C that processes standard string lines to locate and run executable binary applications.
+.PP
+The program operates under two primary execution modes:
+.IP "Interactive"
+Displays a visual shell prompt structure, captures input commands via keyboard streams continuously, and clears out memory cycles cleanly upon tracking an EOF string flag or exit input.
+.IP "Non-Interactive"
+Executes command operations silently when data inputs are systematically piped directly through scripts or string echoes without active interface prints.
+.SH PATH LOOKUP
+If an explicit slash character sequence is absent from the input command, the program breaks down environmental directory paths contained within the system PATH variable matrix to identify the proper execution target location before initiating a fork sequence.
+.SH BUILT-IN COMMAND TARGETS
+.TP
+.B exit
+Terminates the program loop instantly and returns control back to the root operating system.
+.TP
+.B env
+Iterates through the environmental global table layout and outputs each current session parameter directly onto the terminal.
+.SH AUTHORS
+Eman Hamdan, Sarah Alburaidi.
 
